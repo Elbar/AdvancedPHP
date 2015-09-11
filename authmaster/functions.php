@@ -1,0 +1,25 @@
+<?php
+
+
+function checkLoginPassword($login, $password)
+          {
+       $users = ['pupkin' => '123', 'ivanov' => 'qwerty' ];
+       return  isset($users[$login]) && $password == $users[$login];
+
+ 
+  }
+
+   function isUser()
+         {
+    return isset($_COOKIE['auth']);   
+         }
+
+    function getUser()
+ {
+return $_COOKIE['auth'];
+
+}
+
+
+
+?>
