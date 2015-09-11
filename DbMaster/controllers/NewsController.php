@@ -19,15 +19,19 @@ class NewsController
         $art->update();
 
        var_dump($art->id); */
-         $art = NewsModel::findOneByColumn('title', 'Hello');
-        var_dump($art);
+        //
+        //$art = NewsModel::findOneByColumn('title', 'Hello');
+        // var_dump($art);
 
-        /*$article = new NewsModel();
+        $article = new NewsModel();
         $article->title = 'lorem';
         $article->text = 'Hello, World';
-        $article->insert();
+
+       // $article->insert();
+        $article->getAll();
         var_dump($article);
-        var_dump(isset($article->title));
+
+//        var_dump(isset($article->title));
 
         // var_dump(NewsModel::findOneByPk(3));
         /*

@@ -47,7 +47,7 @@ class DB
 
     }
 
-    /*
+/*
 
     public  function queryAll($sql, $class = 'stdClass') {
         $res = mysql_query($sql);
@@ -60,6 +60,7 @@ class DB
         }
         return $ret;
     }
+
     public  function  queryOne($sql, $class='stdClass') {
         return $this->queryAll($sql, $class)[0];
     }

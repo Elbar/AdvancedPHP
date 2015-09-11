@@ -48,6 +48,12 @@ public function __isset($k) {
         return $db->query($sql);
     }
 
+    public  function getAll() {
+        $sql = 'SELECT * FROM news';
+        $db = new DB();
+        return $db->query($sql);
+    }
+
     public static function findOneByPk($id)
     {
         $sql = 'SELECT * FROM '. static::$table .' WHERE id=:id';
