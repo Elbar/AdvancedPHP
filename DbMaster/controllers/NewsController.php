@@ -62,21 +62,14 @@ class NewsController
         $id = $_GET['id'];
         $item= NewsModel::getOne($id);
         var_dump($item);
-          if(empty($item)) {
-              throw new ModelException('Error 404! Page not found... :(');
-
-          }
-
-
-        else {
-
             $view = new View();
             //$view->assign('item', $item);
             $view->render('news/one.php');
-        }
+
+    }
 
         //include __DIR__. '/../views/news/one.php';
-    }
+
 
 
 }

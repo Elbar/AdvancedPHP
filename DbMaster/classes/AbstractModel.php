@@ -44,15 +44,22 @@ public function __isset($k) {
 
     public static  function  getOne($id) {
         $sql ='SELECT * FROM news where id='.$id;
+
         $db = new DB();
-        return $db->query($sql);
+        $res = $db->query($sql);
+        if (empty($res)) {
+            throw new E404Exception('Page not found... :(');
+        }
+        return $res;
     }
 
-    public  function getAll() {
+
+   public  function getAll() {
         $sql = 'SELECT * FROM news';
         $db = new DB();
         return $db->query($sql);
     }
+
 
     public static function findOneByPk($id)
     {
@@ -61,16 +68,19 @@ public function __isset($k) {
         return $db->query($sql, [':id'=>$id]);
 
 
+
     }
 
-public static function findOneByColumn($column, $value) {
+public static function findOneByColumn($column, $value)
+{
     $db = new DB();
     $db->setClassName(get_called_class());
-    $sql = 'SELECT * FROM '. static::$table .' WHERE'.$column . '=:value';
-   $res = $db->query($sql, [':value'=>$value]);
-    if(empty($res)){
-        throw new ModelException('Record not found... :(') ;
+    $sql = 'SELECT * FROM ' . static::$table . ' WHERE' . $column . '=:value';
+    $res = $db->query($sql, [':value' => $value]);
+    if (empty($res)) {
+        throw new ModelException('Record not found... :(');
     }
+
     if(!empty($res)) {
         return $res[0];
     }
