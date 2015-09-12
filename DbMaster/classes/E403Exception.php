@@ -7,6 +7,7 @@
  * Time: 6:54 PM
  */
 class E403Exception
+extends Exception
 {
 
 }
