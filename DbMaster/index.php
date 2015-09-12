@@ -47,9 +47,4 @@ catch (E404Exception $e) {
     $view->display('404.php');
 }
 
-//header('Location: 404.php');
 
-//    die('Something went wrong:' . $e->getMessage());
-
-
-//}
