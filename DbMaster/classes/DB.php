@@ -17,6 +17,10 @@ class DB
        mysql_select_db('test');*/
 
        $this->dbh = new PDO('mysql:dbname=test; host=127.0.0.1', 'fukuro', '12');
+       if(!$this->dbh){
+           throw new E403Exception('Couldn connect with database :(');
+       }
+
    }
      public function setClassName($className) {
           $this->className = $className;
