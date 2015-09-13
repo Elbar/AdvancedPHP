@@ -22,7 +22,6 @@ class NewsController
         //
         //$art = NewsModel::findOneByColumn('title', 'Hello');
         // var_dump($art);
-
         $article = new NewsModel();
         $article->title = 'lorem';
         $article->text = 'Hello, World';

@@ -16,12 +16,15 @@ class DB
        mysql_connect('127.0.0.1','fukuro', '12');
        mysql_select_db('test');*/
 
-       try {
-           $this->dbh = new PDO('mysql:dbname=teost; host=127.0.0.1', 'fukuro', '12');
 
-       }catch (PDOException $e){
-           die('Couldnt connect to database!Please retry!');
+       try {
+           $this->dbh = new PDO('mysql:dbname=test; host=127.0.0.1', 'fukuro', '12');
        }
+       catch(PDOException $e){
+           header( 'Refresh: 1; url=./views/403.php' );
+
+           die('Sorry.Couldnt connect with database!');
+           }
 
    }
      public function setClassName($className) {

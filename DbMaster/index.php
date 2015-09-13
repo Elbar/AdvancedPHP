@@ -25,18 +25,26 @@
 var_dump($m);
 
  */
+//var_dump($_SERVER['REQUEST_URI']);
+//var_dump($_GET);
 
 require_once __DIR__.'/autoload.php';
 
+/* $path =parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$pathParts = explode('/', $path);*/
 
-    $ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
-    $act = isset($_GET['act']) ? $_GET['act'] : 'All';
+$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$act = isset($_GET['act']) ? $_GET['act'] : 'All';
+//var_dump($ctrl);
+//var_dump($act);
 
 
-$controllerClassName = $ctrl. 'Controller';
+//$ctrl =!empty($pathParts[1]) ? $pathParts[1]  : 'News';
+//$act =!empty($pathParts[2]) ? $pathParts[2]  : 'All';
+
 //require_once __DIR__ . '/controllers/' . $controllerClassName . '.php';
 try {
-
+    $controllerClassName = $ctrl. 'Controller';
     $controller = new $controllerClassName;
     $method = 'action' . $act;
     $controller->$method();
@@ -46,5 +54,7 @@ catch (E404Exception $e) {
     $view->error = $e->getMessage();
     $view->display('404.php');
 }
+
+
 
 
