@@ -14,7 +14,7 @@ class Log
 
         if(!is_writable($strFileName))
         {
-            die('Change your ChMOD permissions to '. $strFileName);
+            die('Change your CHMOD permissions to '. $strFileName);
         }
         $handle = fopen($strFileName, 'a+');
         fwrite($handle, "\r". $strData );
