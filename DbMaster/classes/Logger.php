@@ -22,8 +22,9 @@ class Log
     }
 
     /**
-     * @param $strFileName The name of the file
-     * @return string
+     * @desc Reading the file
+     * @param    $strFileName   The name of the file
+     * @return string The text file
      */
     public function Read($strFileName){
         $handle =fopen($strFileName, 'r');
