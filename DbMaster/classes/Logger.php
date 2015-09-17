@@ -1,76 +1,30 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: fukuro
- * Date: 9/12/15
- * Time: 8:34 PM
- */
-class Logger
+class Log
 {
-    //static  variables
-    public static $PATH;
-    protected static $loggers = array();
 
-    protected $name;
-    protected $file;
-    protected $fp;
-
-    public function __construct($name, $file=null){
-        $this->name = $name;
-        $this->file = $file;
-        $this->open();
-    }
-
-
-    public function open(){
-        if(self::$PATH==null){
-            return ;
-        }
-        $this->fp = fopen($this->file=null?self::$PATH.'/'.$this->name.'.log':self::$PATH.'/'.$this->file,'a+');
-
-    }
-    public static function getLogger($name='root', $file=null){
-        if(!isset(self::$loggers[$name])){
-            self::$loggers[$name]=new Logger($name, $file);
-        }
-        return self::$loggers[$name];
-    }
 
     /**
-     * @param $message
+     * @desc Writes to a file
+     * @param $strFileName  The name of the file
+     * @param $strData Data to be appended to the file
      */
-    public function log($message){
-        if(!is_string($message)){
-            //если мы хотим вывести, к примеру, массив
-            $this->logPrint($message);
-            return ;
+
+    public function Write($strFileName, $strData)
+    {
+
+        if(!is_writable($strFileName))
+        {
+            die('Change your ChMOD permissions to '. $strFileName);
         }
-        $log='';
-        //Зафиксируем дату и время происходящего
-        $log.='['.date('D M d H:i:s Y', time()).'] ';
-        if(func_num_args()>1){
-            $params = func_get_args();
-            $message = call_user_func_array('sprintf', $params);
-        }
-        $log.=$message;
-        $log.="\n";
-        $this->_write($log);
-
-    }
-    public function logPrint($obj){
-        ob_start();
-        print_r($obj);
-        $ob=ob_get_clean();
-        $this->log($ob);
-
-    }
-    protected function _write($string) {
-        fwrite($this->fp,$string);
-    }
-    public function __destruct() {
-        fclose($this->fp);
+        $handle = fopen($strFileName, 'a+');
+        fwrite($handle, "\r". $strData );
+        fclose($handle);
     }
 
+    public function Read($strFileName){
+        $handle =fopen($strFileName, 'r');
+        return file_get_contents($strFileName);
 
+    }
 }
+
