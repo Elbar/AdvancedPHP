@@ -21,9 +21,14 @@ class Log
         fclose($handle);
     }
 
+    /**
+     * @param $strFileName The name of the file
+     * @return string
+     */
     public function Read($strFileName){
         $handle =fopen($strFileName, 'r');
         return file_get_contents($strFileName);
+
 
     }
 }
