@@ -25,22 +25,22 @@
 var_dump($m);
 
  */
-//var_dump($_SERVER['REQUEST_URI']);
+var_dump($_SERVER['REQUEST_URI']);
 //var_dump($_GET);
-
+//die;
 require_once __DIR__.'/autoload.php';
 
-/* $path =parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$pathParts = explode('/', $path);*/
+/*$path =parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+//$pathParts = explode('/', $path);
+var_dump($path); */
 
 $ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
 $act = isset($_GET['act']) ? $_GET['act'] : 'All';
-//var_dump($ctrl);
-//var_dump($act);
 
 
-//$ctrl =!empty($pathParts[1]) ? $pathParts[1]  : 'News';
-//$act =!empty($pathParts[2]) ? $pathParts[2]  : 'All';
+/*$ctrl =!empty($pathParts[1]) ? $pathParts[1]  : 'News';
+$act =!empty($pathParts[2]) ? $pathParts[2]  : 'All';
+*/
 
 //require_once __DIR__ . '/controllers/' . $controllerClassName . '.php';
 try {
@@ -53,6 +53,10 @@ catch (E404Exception $e) {
     $view = new View();
     $view->error = $e->getMessage();
     $view->display('404.php');
+    $log = new Log();
+    $log->Write('test.txt', $e);
+    $log->Read('test.txt');
+
 }
 
 
