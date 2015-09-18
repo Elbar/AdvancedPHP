@@ -21,9 +21,12 @@ class DB
            $this->dbh = new PDO('mysql:dbname=test; host=127.0.0.1', 'fukuro', '12');
        }
        catch(PDOException $e){
+           $log = new Log();
+           $log->Write('test.txt', $e);
+           $log->Read('test.txt');
            header( 'Refresh: 1; url=./views/403.php' );
 
-           die('Sorry.Couldnt connect with database!');
+           die("Sorry.Couldn't connect with database!");
            }
 
    }
