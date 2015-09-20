@@ -5,8 +5,8 @@
  * Date: 9/18/15
  * Time: 12:53 PM
  */
-    require_once __DIR__. '/../PHPMailer/PHPMailerAutoload.php';
-    require_once __DIR__ .'/../PHPMailer/class.phpmailer.php';
+    require __DIR__ .'/../PHPMailer/class.phpmailer.php';
+    require_once __DIR__ .'/../PHPMailer/PHPMailerAutoload.php';
 
     $mail = new PHPMailer();
 
@@ -19,28 +19,20 @@
     $mail->CharSet = "UTF-8";
 
     $body = file_get_contents('test.txt');
-    $mail->Username = 'Elbar.israilov@gmail.com';
-    $mail->Password = 'e1l2b3a4r5';
-    $mail->SetFrom('Elbar.israilov', 'Системный администратор');
-    $mail->Subject   ='Логи сайта';
+    $mail->Username = $_POST['email'];
+    $mail->Password = 'password';
+    $mail->SetFrom('Username', 'Системный администратор');
+    $mail->Subject   ='Logs of site';
     $mail->MsgHTML($body);
-    $address = 'Elbar_israilov@mail.ru';
-    $mail->AddAddress($address, 'Админу сайта');
+    $address = 'Recipient@mail.ru';
+    $mail->AddAddress($address, 'To admin');
 
     $mail->addAttachment("test.txt");
 
    if($mail->Send()){
-       echo 'Ваше письмо успешно отправлено';
+       echo 'Your message has been successfully sent';
    }else{
        echo 'Oops';
    }
-/*
-  $email = $_REQUEST['email'] ;
-  $message = $_REQUEST['message'] ;
 
-  // here we use the php mail function
-  // to send an email to:
-  // you@yourdomain.com
-  mail( "Elbar_israilov@mail.ru", "Feedback Form Results",$message, "From: $email" );
-    */
 header('Refresh: 2; url=index.php');
