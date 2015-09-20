@@ -34,5 +34,4 @@
    }else{
        echo 'Oops';
    }
-
 header('Refresh: 2; url=index.php');
