@@ -49,6 +49,7 @@ public function __isset($k) {
         $res = $db->query($sql);
         if (empty($res)) {
             throw new E404Exception('Page not found... :(');
+
         }
         return $res;
     }
@@ -112,6 +113,8 @@ public static function findOneByColumn($column, $value)
         $this->id = $db -> lastInsertId();
 
     }
+
+
 
 /*
     public function delete()
