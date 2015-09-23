@@ -1,0 +1,63 @@
+
+
+exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(63): AbstractModel::getOne('2323')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(50): NewsController->actionOne()
+#2 {main}exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'fukurwo'@'localhost' (using password: YES)' in /opt/lampp/htdocs/test/DbMaster/classes/DB.php:21
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/classes/DB.php(21): PDO->__construct('mysql:dbname=te...', 'fukurwo', '12')
+#1 /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php(48): DB->__construct()
+#2 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(63): AbstractModel::getOne('2323')
+#3 /opt/lampp/htdocs/test/DbMaster/index.php(50): NewsController->actionOne()
+#4 {main}exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'fukurwo'@'localhost' (using password: YES)' in /opt/lampp/htdocs/test/DbMaster/classes/DB.php:21
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/classes/DB.php(21): PDO->__construct('mysql:dbname=te...', 'fukurwo', '12')
+#1 /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php(48): DB->__construct()
+#2 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(63): AbstractModel::getOne('2323')
+#3 /opt/lampp/htdocs/test/DbMaster/index.php(50): NewsController->actionOne()
+#4 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(64): AbstractModel::getOne('121')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne(NULL)
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('121')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('12')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('121')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('4')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('3')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('3')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('121')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('121')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}exception 'E404Exception' with message 'Page not found... :(' in /opt/lampp/htdocs/test/DbMaster/classes/AbstractModel.php:51
+Stack trace:
+#0 /opt/lampp/htdocs/test/DbMaster/controllers/NewsController.php(65): AbstractModel::getOne('223')
+#1 /opt/lampp/htdocs/test/DbMaster/index.php(52): NewsController->actionOne()
+#2 {main}
