@@ -24,6 +24,8 @@ class DB
            $log = new Log();
            $log->Write('test.txt', $e);
            $log->Read('test.txt');
+
+
            header( 'Refresh: 1; url=./views/403.php' );
 
            die("Sorry.Couldn't connect with database!");
