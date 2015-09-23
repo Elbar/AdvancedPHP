@@ -6,7 +6,7 @@
 <meta charset = "utf-8">
 <h3>Галерея на PHP</h3>
 <?php
- require __DIR__ .'/functions.php';
+ require __DIR__ . '/functions.php';
 
 /*
 assert(true == checkLoginPassword('pupkin', '123'));
